@@ -9,3 +9,23 @@ Return k.
 
 
 Solution:
+  public class Solution {
+    public int RemoveElement(int[] nums, int val) {
+        int i = 0 , j = nums.Length - 1;
+    
+        while(j >= i){
+           if(nums[i] != val){
+               i++;
+           }
+           else if( nums[j] == val){
+               j--;
+           }
+           else{
+               (nums[i],nums[j]) = (nums[j], nums[i]);
+               i++;
+               j--;
+           }
+        }        
+        return i;
+    }
+}
